@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Item List</h1>
+  
+  <div class="controls">
+    <input [(ngModel)]="filterText" placeholder="Filter items" />
+    <select [(ngModel)]="sortOrder">
+      <option value="asc">Sort Ascending</option>
+      <option value="desc">Sort Descending</option>
+    </select>
+  </div>
+  
+  <ul>
+    <li *ngFor="let item of items | filter:filterText | sort:sortOrder">
+      {{ item.name }}
+    </li>
+  </ul>
+</div>
+

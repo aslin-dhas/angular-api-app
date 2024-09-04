@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ItemListComponent } from './item-list/item-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [CommonModule, ItemListComponent],
+  template: `
+    <app-item-list></app-item-list>
+  `,
 })
-export class AppComponent {
-  title = 'angular-item-list';
-}
+export class AppComponent {}
+
